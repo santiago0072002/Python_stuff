@@ -216,3 +216,64 @@ while x == 1:
 print("the names are: ")
 for name in range(len(people_names)):
     print( people_names[name]," was number ", name + 1)
+# link list They have a nodes, the list is going to have a head node, inside the head there is data and and the next part of the node pointing to the next node. 
+# - Append (add element to end of list)
+#- Prepend (add element to beginning of list)
+#- Add element after element in the list. 
+
+# source: https://www.youtube.com/watch?v=FSsriWQ0qYE&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV&index=5
+
+# so lets create a node which is part of a linked list
+# first create a class called Node
+class Node:
+    def __init__(self,data): # this is going to be the constructor for the class
+        self.data = data
+        self.next = None
+
+class LinkedList: # created a class Linked List. I am still learning all this
+    def __init__(self):
+        self.head = None
+
+    def print_list(self):
+        cur_node = self.head
+        while cur_node:
+            print(cur_node.data)
+            cur_node = cur_node.next
+
+    def append(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+        
+        last_node = self.head
+        while last_node.next:
+            last_node = last_node.next 
+        last_node.next = new_node
+
+    def prepend(self, data):
+        new_node = Node(data)
+
+        new_node.next = self.head
+        self.head = new_node
+
+    def insert_after_node(self, prev_node, data):
+
+        if not prev_node:
+            print("Privious Node is not in the list")
+            return
+        new_node = Node(data)
+
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+
+
+llist = LinkedList()
+llist.append("A")
+llist.append("B")
+llist.append("C")
+llist.append("D")
+# llist.prepend("E")
+llist.insert_after_node(llist.head.next, "F")
+llist.print_list()
