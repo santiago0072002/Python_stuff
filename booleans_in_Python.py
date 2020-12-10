@@ -37,7 +37,7 @@ candrink = age > 20 # if the age is greater than 20 then assign the value to can
 print(candrink)
 
 print("What is the age number")
-age= input()
+age= int(input())
 
 if age > 20: 
   print(" the age is greater than 20")
@@ -112,3 +112,13 @@ print("A before B?", "ABC" < "BCD")
 #Not operator can be used to negate an equality check
 #Read A is not equal to B? 
 print("A != B?", "A" != "B")
+
+def decision(a): 
+    if len(a) > 17:
+        return"This is a long string"
+    elif len(a) <= 17: 
+        return"This is a short string"
+
+    
+x = decision("THIS IS A VERY LONG STRING")
+print(x)
