@@ -195,5 +195,6 @@ thislist.insert(0, "avocato")# the insert method if you give it an index is goin
 # in this example I pushed everything to the right by inserting avocato to index 0. 
 print(thislist)
 
-
+# deleting stuff from the list use the del key word. example. 
+del thislist[1] # that would delete the second element of the list, remember list starts at 0
   
