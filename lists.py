@@ -34,6 +34,8 @@ copy = my_favorite_things[:]
 copy1 = my_favorite_things.copy() # or we can use the copy method and assign it to another variable. 
 print(copy1)
 
+
+
 # Python3 code to iterate over a list
 # https://www.geeksforgeeks.org/iterate-over-a-list-in-python/
 list = [1, 3, 5, 7, 9]
@@ -197,4 +199,20 @@ print(thislist)
 
 # deleting stuff from the list use the del key word. example. 
 del thislist[1] # that would delete the second element of the list, remember list starts at 0
-  
+print(thislist) 
+
+# entering names into the list using a loop
+
+people_names = []# this is just saying I am creating an empty list 
+
+# as long as the loop is false it is going to break the loop. 
+x = 1
+while x == 1: 
+    print("Enter some names start with: number " + str(len(people_names) + 1 ) + " or press enter to exit")
+    name = input()
+    if name == '': 
+        x = 2 # breaking the loop if the user enters nothing just change the variable. 
+    people_names = people_names + [name] # this is how we concatenate into the list
+print("the names are: ")
+for name in range(len(people_names)):
+    print( people_names[name]," was number ", name + 1)
